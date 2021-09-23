@@ -5,18 +5,18 @@ public class Bubble_Sort {
     public static void main(String[] args) {
         ArrayList<Integer> arr = new ArrayList<Integer>();
         Scanner input = new Scanner(System.in);
-        char x = 'e';
-        int swap = 0, y = 0;
+        int swap = 0, x=0, y = 0, z=0;
         boolean loop = true;
         
-        System.out.println("Enter your number list for sorting(enter e for exit when done): ");
-        x = input.next().charAt(0);
-
-        while (x != 'e'){
-            arr.add(Character.getNumericValue(x));
-            x = input.next().charAt(0);
-        }
+        System.out.println("How many number in the list: ");
+        z = input.nextInt();
+        System.out.println("Enter your number: ");
         
+        while(x<=z){
+            arr.add(input.nextInt());
+            x++;
+        }
+
         while (loop){
             
             while(y<arr.size()-1){
