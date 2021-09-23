@@ -6,7 +6,8 @@ public class Bubble_Sort {
         ArrayList<Integer> arr = new ArrayList<Integer>();
         Scanner input = new Scanner(System.in);
         char x = 'e';
-        int swap = 1, y = 0;
+        int swap = 0, y = 0;
+        boolean loop = true;
         
         System.out.println("Enter your number list for sorting(enter e for exit when done): ");
         x = input.next().charAt(0);
@@ -16,27 +17,26 @@ public class Bubble_Sort {
             x = input.next().charAt(0);
         }
         
-        while(swap != 0){
-            swap = 0;
+        while (loop){
             
-            if (y>=arr.size()){
+            while(y<arr.size()-1){
+                if (arr.get(y)>arr.get(y+1)){
+                Swaping(y, y+1, arr);
+                y++;
+                swap++;
+            }
+                else{
+                y++;
+            }
+        }
+            if (swap>=1){
+                loop = true;
+                swap = 0;
                 y=0;
             }
-            
             else{
-                
-                if (arr.get(y)>arr.get(y+1)){
-                    Swaping(y, y+1, arr);
-                    swap++;
-                    y++;
-                }
-                
-                else{
-                    y++;
-                }
-            
+                loop = false;
             }
-
         }
         
 
